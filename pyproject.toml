@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "ineapy"
+version = "0.1.2"
+description = ""
+authors = ["Angel Rodriguez Chicote"]
+readme = "README.md"
+repository = "https://github.com/Angel-RC/ineapy.git"
+keywords = ["INE", "statistics", "data", "Spain", "API"]
+
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.14"
+dlt = "^1.9.0"
+pandas = "^2.2.3"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+pre-commit = "^4.2.0"
+ruff = "^0.11.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+# Set the maximum line length to 79.
+line-length = 120
+exclude = [".venv"]
+indent-width = 4
+respect-gitignore = true
+
+[tool.ruff.lint]
+# Add the `line-too-long` rule to the enforced rule set. By default, Ruff omits rules that
+# overlap with the use of a formatter, like Black, but we can override this behavior by
+# explicitly adding the rule.
+# extend-select = ["E501"]
+select = [
+    "N", # pep8-naming
+    "I" # isort
+]
